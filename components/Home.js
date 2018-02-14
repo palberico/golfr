@@ -21,6 +21,10 @@ export default class Home extends React.Component {
             <Button block style={styles.btn3}>
               <Text style={styles.textBtn}>Find Leagues</Text>
             </Button>
+
+            <Button block style={styles.btn4}>
+              <Text style={styles.textBtn}>One on One</Text>
+            </Button>
          
     </ImageBackground>
     </Content>
@@ -42,7 +46,7 @@ const styles = StyleSheet.create({
     color: 'white',
   },
   btn: {
-    marginTop: 300, // Figure out why alignItmes and justifyContent isn't working.
+    marginTop: 325, // Figure out why alignItmes and justifyContent isn't working.
     // alignItems: 'center',
     // justifyContent: 'center',
     width: deviceY/ 2.5,
@@ -51,7 +55,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'rgba(52, 52, 52, 0.8)',
   },
   btn2: {
-    marginTop: 75, // Figure out why alignItmes and justifyContent isn't working.
+    marginTop: 50, // Figure out why alignItmes and justifyContent isn't working.
     // alignItems: 'center',
     // justifyContent: 'center',
     width: deviceY/ 2.5,
@@ -60,6 +64,15 @@ const styles = StyleSheet.create({
     backgroundColor: 'rgba(52, 52, 52, 0.8)',
   },
   btn3: {
+    marginTop: 10, // Figure out why alignItmes and justifyContent isn't working.
+    // alignItems: 'center',
+    // justifyContent: 'center',
+    width: deviceY/ 2.5,
+    marginRight: 'auto',
+    marginLeft: 'auto',
+    backgroundColor: 'rgba(52, 52, 52, 0.8)',
+  },
+  btn4: {
     marginTop: 10, // Figure out why alignItmes and justifyContent isn't working.
     // alignItems: 'center',
     // justifyContent: 'center',
