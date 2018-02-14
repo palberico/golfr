@@ -1,17 +1,22 @@
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React, { Component } from 'react';
+import { StyleSheet, Text, View, ImageBackground, Dimensions } from 'react-native';
+import { Container, Content } from 'native-base';
+import Home from './components/Home';
 
 export default class App extends React.Component {
   render() {
     return (
-      <View style={styles.container}>
-        <Text>Open up App.js to start working on your app!</Text>
-        <Text>Changes you make will automatically reload.</Text>
-        <Text>Shake your phone to open the developer menu.</Text>
-      </View>
+      <Container>
+      <Content scrollEnabled={false}>
+    <Home />
+    </Content>
+  </Container>
     );
   }
 }
+
+const deviceY = Dimensions.get('window').height;
+const deviceX = Dimensions.get('window').width;
 
 const styles = StyleSheet.create({
   container: {
@@ -19,5 +24,9 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
+  },
+  backGround: {
+    width: deviceX,
+    height: deviceY,
   },
 });
