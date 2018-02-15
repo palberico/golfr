@@ -12,7 +12,7 @@ import { Link } from 'react-router-native';
 class Home extends React.Component {
 
   openOrganize = () => {
-    // TODO
+    this.props.history.push('/organize')
   }
 
   render() {
@@ -23,7 +23,7 @@ class Home extends React.Component {
             source={require('../images/Golfr.jpg')}
             style={styles.backGround}
           >
-            <Button block style={styles.btn}>
+            <Button block style={styles.btn} onPress={this.openOrganize}>
               <Text style={styles.textBtn}>Organize</Text>
             </Button>
             <Button block style={styles.btn2}>
