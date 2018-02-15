@@ -7,8 +7,14 @@ import {
   Dimensions, 
 } from 'react-native';
 import { Container, Content, Button } from 'native-base';
+import { Link } from 'react-router-native';
 
 class Home extends React.Component {
+
+  openOrganize = () => {
+    // TODO
+  }
+
   render() {
     return (
       <Container>
