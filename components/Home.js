@@ -1,37 +1,40 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, View, ImageBackground, Dimensions } from 'react-native';
+import { 
+  StyleSheet, 
+  Text, 
+  View, 
+  ImageBackground, 
+  Dimensions, 
+} from 'react-native';
 import { Container, Content, Button } from 'native-base';
 
-export default class Home extends React.Component {
+class Home extends React.Component {
   render() {
     return (
       <Container>
-      <Content scrollEnabled={false}>
-    <ImageBackground source={require('../images/Golfr.jpg')}
-      style={styles.backGround}>
-   
-      <Button block style={styles.btn}>
+        <Content scrollEnabled={false}>
+          <ImageBackground 
+            source={require('../images/Golfr.jpg')}
+            style={styles.backGround}
+          >
+            <Button block style={styles.btn}>
               <Text style={styles.textBtn}>Organize</Text>
             </Button>
-
             <Button block style={styles.btn2}>
               <Text style={styles.textBtn}>Find Tournaments</Text>
             </Button>
-
             <Button block style={styles.btn3}>
               <Text style={styles.textBtn}>Find Leagues</Text>
             </Button>
-
             <Button block style={styles.btn4}>
               <Text style={styles.textBtn}>One on One</Text>
             </Button>
-         
-    </ImageBackground>
-    </Content>
-  </Container>
-    );
+          </ImageBackground>
+        </Content>
+      </Container>
+    )
   }
-}
+};
 
 const deviceY = Dimensions.get('window').height;
 const deviceX = Dimensions.get('window').width;
@@ -82,3 +85,5 @@ const styles = StyleSheet.create({
     backgroundColor: 'rgba(52, 52, 52, 0.8)',
   },
 });
+
+export default Home;

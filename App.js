@@ -1,19 +1,19 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, View, ImageBackground, Dimensions } from 'react-native';
+import { StyleSheet, Dimensions } from 'react-native';
 import { Container, Content } from 'native-base';
 import Home from './components/Home';
 
-export default class App extends React.Component {
+class App extends React.Component {
   render() {
     return (
       <Container>
-      <Content scrollEnabled={false}>
-    <Home />
-    </Content>
-  </Container>
-    );
+        <Content scrollEnabled={false}>
+          <Home />
+        </Content>
+      </Container>
+    )
   }
-}
+};
 
 const deviceY = Dimensions.get('window').height;
 const deviceX = Dimensions.get('window').width;
@@ -30,3 +30,5 @@ const styles = StyleSheet.create({
     height: deviceY,
   },
 });
+
+export default App;
