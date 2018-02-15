@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { StyleSheet, Dimensions } from 'react-native';
 import { Container, Content } from 'native-base';
 import Home from './components/Home';
+import { NativeRouter, Switch, Route, } from 'react-router-native';
 
 class App extends React.Component {
   render() {
