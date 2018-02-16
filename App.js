@@ -5,6 +5,9 @@ import { NativeRouter, Switch, Route, } from 'react-router-native';
 import { Root } from 'native-base';
 import Home from './components/Home';
 import Organize from './components/Organize';
+import OneOnOne from './components/OneOnOne';
+import Leagues from './components/Leagues';
+import Tournaments from './components/Tournaments';
 
 class App extends React.Component {
 
@@ -14,6 +17,9 @@ class App extends React.Component {
         <Switch>
           <Route exact path='/' component={Home} />
           <Route exact path='/organize' component={Organize} />
+          <Route exact path='/oneonone' component={OneOnOne} />
+          <Route exact path='/leagues' component={Leagues} />
+          <Route exact path='/tournaments' component={Tournaments} />
         </Switch>
       </NativeRouter>
     )

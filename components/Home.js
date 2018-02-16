@@ -14,6 +14,18 @@ class Home extends React.Component {
   openOrganize = () => {
     this.props.history.push('/organize')
   }
+  
+  openOneOnOne = () => {
+    this.props.history.push('/oneonone')
+  }
+  
+  openTournaments = () => {
+    this.props.history.push('/tournaments')
+  }
+  
+  openLeagues = () => {
+    this.props.history.push('/leagues')
+  }
 
   render() {
     return (
@@ -26,13 +38,13 @@ class Home extends React.Component {
             <Button block style={styles.btn} onPress={this.openOrganize}>
               <Text style={styles.textBtn}>Organize</Text>
             </Button>
-            <Button block style={styles.btn2}>
+            <Button block style={styles.btn2} onPress={this.openTournaments}>
               <Text style={styles.textBtn}>Find Tournaments</Text>
             </Button>
-            <Button block style={styles.btn3}>
+            <Button block style={styles.btn3} onPress={this.openLeagues}>
               <Text style={styles.textBtn}>Find Leagues</Text>
             </Button>
-            <Button block style={styles.btn4}>
+            <Button block style={styles.btn4} onPress={this.openOneOnOne}>
               <Text style={styles.textBtn}>One on One</Text>
             </Button>
           </ImageBackground>
