@@ -1,31 +1,56 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, View, ImageBackground, Dimensions } from 'react-native';
+import { 
+  StyleSheet, 
+  Text, 
+  View, 
+  ImageBackground, 
+  Dimensions, 
+} from 'react-native';
 import { Container, Content, Button } from 'native-base';
+import { Link } from 'react-router-native';
 
-export default class Home extends React.Component {
+class Home extends React.Component {
+
+  openOrganize = () => {
+    this.props.history.push('/organize')
+  }
+  
+  openOneOnOne = () => {
+    this.props.history.push('/oneonone')
+  }
+  
+  openTournaments = () => {
+    this.props.history.push('/tournaments')
+  }
+  
+  openLeagues = () => {
+    this.props.history.push('/leagues')
+  }
+
   render() {
     return (
       <Container>
-      <Content scrollEnabled={false}>
-    <ImageBackground source={require('../images/Golfr.jpg')}
-      style={styles.backGround}>
-   <View style={styles.btnView}>
-      <Button block style={styles.btn}>
+        <Content scrollEnabled={false}>
+          <ImageBackground 
+            source={require('../images/Golfr.jpg')}
+            style={styles.backGround}
+          >
+          <View style={styles.btnView}>
+            <Button block style={styles.btn} onPress={this.openOrganize}>
               <Text style={styles.textBtn}>Organize</Text>
             </Button>
-
-            <Button block style={styles.btn2}>
+            <Button block style={styles.btn2} onPress={this.openTournaments}>
               <Text style={styles.textBtn}>Play</Text>
             </Button>
             </View>
    
-
-    </ImageBackground>
-    </Content>
-  </Container>
-    );
+            
+          </ImageBackground>
+        </Content>
+      </Container>
+    )
   }
-}
+};
 
 const deviceY = Dimensions.get('window').height;
 const deviceX = Dimensions.get('window').width;
@@ -34,7 +59,10 @@ const styles = StyleSheet.create({
   backGround: {
     width: deviceX,
     height: deviceY,
-    
+  },
+  textBtn:{
+    fontSize: 18,
+    color: 'white',
   },
   btnView: {
     flex: 1,
@@ -48,15 +76,12 @@ const styles = StyleSheet.create({
     backgroundColor: 'rgba(52, 52, 52, 0.8)',
   },
   btn2: {
-    marginTop: 15, 
+    marginTop: 10, 
     width: deviceY/ 2.5,
     marginRight: 'auto',
     marginLeft: 'auto',
     backgroundColor: 'rgba(52, 52, 52, 0.8)',
   },
-  textBtn:{
-    fontSize: 25,
-    color: 'white',
-    textAlign: 'right',
-  },
 });
+
+export default Home;
