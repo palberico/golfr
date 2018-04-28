@@ -21,7 +21,7 @@ class Tournaments extends React.Component {
           <ImageBackground
             source={require('../images/Golfr.jpg')}
             style={styles.backGround}
-          >
+            >
             <Button block style={styles.btn} onPress={this.openHome}>
               <Text style={styles.textBtn}>Home</Text>
             </Button>

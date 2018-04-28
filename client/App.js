@@ -1,13 +1,15 @@
 import React, { Component } from 'react';
-import { StyleSheet, Dimensions } from 'react-native';
+import { StyleSheet, Dimensions, Image } from 'react-native';
 import { Container, Content } from 'native-base';
 import { NativeRouter, Switch, Route, } from 'react-router-native';
 import { Root } from 'native-base';
 import Home from './components/Home';
 import Organize from './components/Organize';
-import OneOnOne from './components/OneOnOne';
+import Loader from './components/Loader';
 import Leagues from './components/Leagues';
 import Tournaments from './components/Tournaments';
+import Splash from './components/Splash';
+import Weather from './components/Weather';
 
 class App extends React.Component {
 
@@ -17,9 +19,10 @@ class App extends React.Component {
         <Switch>
           <Route exact path='/' component={Home} />
           <Route exact path='/organize' component={Organize} />
-          <Route exact path='/oneonone' component={OneOnOne} />
+          <Route exact path='/loader' component={Loader} />
           <Route exact path='/leagues' component={Leagues} />
           <Route exact path='/tournaments' component={Tournaments} />
+          <Route exact path='/weather' component={Weather} />
         </Switch>
       </NativeRouter>
     )

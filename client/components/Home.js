@@ -15,8 +15,8 @@ class Home extends React.Component {
     this.props.history.push('/organize')
   }
   
-  openOneOnOne = () => {
-    this.props.history.push('/oneonone')
+  openLoader = () => {
+    this.props.history.push('/loader')
   }
   
   openTournaments = () => {
@@ -25,6 +25,10 @@ class Home extends React.Component {
   
   openLeagues = () => {
     this.props.history.push('/leagues')
+  }
+
+  openWeather = () => {
+    this.props.history.push('/weather')
   }
 
   render() {
@@ -42,9 +46,13 @@ class Home extends React.Component {
             <Button block style={styles.btn2} onPress={this.openTournaments}>
               <Text style={styles.textBtn}>Play</Text>
             </Button>
+            <Button block style={styles.btn2} onPress={this.openLoader}>
+              <Text style={styles.textBtn}>Ball</Text>
+            </Button>
+            <Button block style={styles.btn2} onPress={this.openWeather}>
+              <Text style={styles.textBtn}>Weather</Text>
+            </Button>
             </View>
-   
-            
           </ImageBackground>
         </Content>
       </Container>
