@@ -7,7 +7,7 @@ end
 
 gem 'pg', '~> 0.18'
 gem 'puma', '~> 3.7'
-gem 'rails-html-sanitizer'
+
 
 
 group :development, :test do

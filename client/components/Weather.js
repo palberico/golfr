@@ -77,14 +77,14 @@ class Weather extends React.Component {
       }
     return(
       <Container>
-        <Content>
+        <Content Content style={styles.background}>
             <Button block style={styles.btn} onPress={this.openHome}>
               <Text style={styles.textBtn}>Home</Text>
             </Button>
               {
                 this.state.days.map( (element, index) => {
                   return (
-                    <View key={index} style={{marginTop: 10, borderWidth: 2, justifyContent: 'center', alignItems: 'center'}}>
+                    <View key={index} style={{marginTop: 10, borderWidth: 2, justifyContent: 'center', alignItems: 'center',backgroundColor: '#fff'}}>
                         <Text style={{fontWeight: "900"}}>{element.date}</Text>
                       <Image
                         style={{width: 50, height: 50}}
@@ -108,49 +108,19 @@ const deviceY = Dimensions.get('window').height;
 const deviceX = Dimensions.get('window').width;
 
 const styles = StyleSheet.create({
-  backGround: {
-    width: deviceX,
-    height: deviceY,
+  background:{
+    backgroundColor: '#2a3035',
   },
   textBtn:{
     fontSize: 18,
     color: 'white',
   },
   btn: {
-    marginTop: 325, // Figure out why alignItmes and justifyContent isn't working.
-    // alignItems: 'center',
-    // justifyContent: 'center',
+    marginTop: 325, 
     width: deviceY/ 2.5,
     marginRight: 'auto',
     marginLeft: 'auto',
-    backgroundColor: 'rgba(52, 52, 52, 0.8)',
-  },
-  btn2: {
-    marginTop: 50, // Figure out why alignItmes and justifyContent isn't working.
-    // alignItems: 'center',
-    // justifyContent: 'center',
-    width: deviceY/ 2.5,
-    marginRight: 'auto',
-    marginLeft: 'auto',
-    backgroundColor: 'rgba(52, 52, 52, 0.8)',
-  },
-  btn3: {
-    marginTop: 10, // Figure out why alignItmes and justifyContent isn't working.
-    // alignItems: 'center',
-    // justifyContent: 'center',
-    width: deviceY/ 2.5,
-    marginRight: 'auto',
-    marginLeft: 'auto',
-    backgroundColor: 'rgba(52, 52, 52, 0.8)',
-  },
-  btn4: {
-    marginTop: 10, // Figure out why alignItmes and justifyContent isn't working.
-    // alignItems: 'center',
-    // justifyContent: 'center',
-    width: deviceY/ 2.5,
-    marginRight: 'auto',
-    marginLeft: 'auto',
-    backgroundColor: 'rgba(52, 52, 52, 0.8)',
+    backgroundColor: '#7B9CC3',
   },
 });
 

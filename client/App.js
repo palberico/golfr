@@ -10,6 +10,8 @@ import Leagues from './components/Leagues';
 import Tournaments from './components/Tournaments';
 import Splash from './components/Splash';
 import Weather from './components/Weather';
+import Register from './components/Register';
+import Search from './components/Search';
 
 class App extends React.Component {
 
@@ -22,6 +24,8 @@ class App extends React.Component {
           <Route exact path='/loader' component={Loader} />
           <Route exact path='/leagues' component={Leagues} />
           <Route exact path='/tournaments' component={Tournaments} />
+          <Route exact path="/register" component={Register} />
+          <Route exact path="/search" component={Search} />
           <Route exact path='/weather' component={Weather} />
         </Switch>
       </NativeRouter>
