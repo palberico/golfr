@@ -5,9 +5,9 @@ import {
   View,
   ImageBackground,
   Dimensions,
-  Image
+  Image,
 } from 'react-native';
-import { Container, Content, Button } from 'native-base';
+import { Container, Content, Button, Card, Header, Icon } from 'native-base';
 import axios from 'axios';
 
 //Weather API
@@ -77,14 +77,14 @@ class Weather extends React.Component {
       }
     return(
       <Container>
-        <Content Content style={styles.background}>
-            <Button block style={styles.btn} onPress={this.openHome}>
-              <Text style={styles.textBtn}>Home</Text>
-            </Button>
+        <Header style={styles.head}>
+          <Text style={styles.headtxt}>Salt Lake City</Text>
+          </Header>
+        <Content style={styles.background} scrollEnabled={false}>
               {
                 this.state.days.map( (element, index) => {
                   return (
-                    <View key={index} style={{marginTop: 10, borderWidth: 2, justifyContent: 'center', alignItems: 'center',backgroundColor: '#fff'}}>
+                    <Card key={index} style={styles.cards}>
                         <Text style={{fontWeight: "900"}}>{element.date}</Text>
                       <Image
                         style={{width: 50, height: 50}}
@@ -94,11 +94,16 @@ class Weather extends React.Component {
                       <Text>High: {element.temperature.high.fahrenheit}F | {element.temperature.high.celsius}C</Text>
                       <Text>Low: {element.temperature.low.fahrenheit}F | {element.temperature.low.celsius}C</Text>
                       <Text>Wind: {element.wind.dir} @ {element.wind.mph} MPH</Text>
-                    </View> 
-                  )
+                    </Card>
+                  )   
                 })
               }
+         
+                <Button block style={styles.btn} onPress={this.openHome}>
+                  <Text style={styles.textBtn}>Home</Text>
+                </Button>
         </Content>
+             
       </Container>
     )
   }
@@ -111,16 +116,32 @@ const styles = StyleSheet.create({
   background:{
     backgroundColor: '#2a3035',
   },
+  head:{
+    backgroundColor: '#2a3035',
+    shadowColor: 'transparent',
+  },
+  headtxt:{
+    marginTop: 5,
+    fontSize: 25,
+    color: 'white',
+  },
   textBtn:{
     fontSize: 18,
     color: 'white',
   },
   btn: {
-    marginTop: 325, 
+    marginTop: 15, 
     width: deviceY/ 2.5,
     marginRight: 'auto',
     marginLeft: 'auto',
     backgroundColor: '#7B9CC3',
+  },
+  cards:{
+    marginTop: 10,
+    borderWidth: 2,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#fff',
   },
 });
 
